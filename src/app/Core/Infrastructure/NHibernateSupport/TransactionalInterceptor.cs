@@ -1,5 +1,5 @@
 using System.Transactions;
-using Castle.Core.Interceptor;
+using Castle.DynamicProxy;
 
 namespace FakeVader.Core.Infrastructure.NHibernateSupport {
     public class TransactionalInterceptor : IInterceptor {

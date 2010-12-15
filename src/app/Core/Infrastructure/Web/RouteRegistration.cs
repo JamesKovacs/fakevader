@@ -5,7 +5,9 @@ namespace FakeVader.Core.Infrastructure.Web {
     public class RouteRegistration : IStartupTask {
         public void Execute() {
             var routes = RouteTable.Routes;
+            routes.Clear();
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("favicon.ico");
 
             routes.MapRoute(
                 "Default", // Route name

@@ -15,7 +15,7 @@ namespace FakeVader.Core.Repositories {
         }
 
         public IQueryable<T> FindAll() {
-            return session.Linq<T>();
+            return session.Query<T>();
         }
     }
 }
