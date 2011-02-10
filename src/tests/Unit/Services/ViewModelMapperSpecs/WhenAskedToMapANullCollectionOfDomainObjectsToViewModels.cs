@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using FakeVader.Core.Domain;
@@ -6,16 +5,16 @@ using FakeVader.Core.Services;
 using FakeVader.Core.ViewModels;
 using NUnit.Framework;
 
-namespace FakeVader.Tests.InfrastructureServices.ViewModelMappingSpecs {
+namespace FakeVader.Tests.Services.ViewModelMapperSpecs {
     [TestFixture]
-    public class WhenAskedToMapAnEmptyCollectionOfDomainObjectsToViewModels : ConcernsFor<ViewModelMapper> {
+    public class WhenAskedToMapANullCollectionOfDomainObjectsToViewModels : ConcernsFor<ViewModelMapper> {
         [Test]
         public void ShouldReturnAnEmptyEnumerable() {
             Assert.That(result, Is.SameAs(Enumerable.Empty<PostViewModel>()));
         }
 
         protected override void Context() {
-            noPosts = new Post[]{};
+            nullPosts = null;
         }
 
         protected override ViewModelMapper CreateSUT() {
@@ -23,10 +22,10 @@ namespace FakeVader.Tests.InfrastructureServices.ViewModelMappingSpecs {
         }
 
         protected override void Because() {
-            result = Sut.MapAll<Post,PostViewModel>(noPosts);
+            result = Sut.MapAll<Post,PostViewModel>(nullPosts);
         }
 
-        private Post[] noPosts;
+        private Post[] nullPosts;
         private IEnumerable<PostViewModel> result;
     }
 }

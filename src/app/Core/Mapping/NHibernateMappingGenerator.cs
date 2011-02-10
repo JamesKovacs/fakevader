@@ -15,14 +15,15 @@ namespace FakeVader.Core.Mapping {
 
         public Configuration Generate() {
             var model = new AutoPersistenceModel()
-                        .AddEntityAssembly(Assembly.GetExecutingAssembly())
-                        .Where(x => x.Namespace.IsNotNullOrEmpty() && x.Namespace.StartsWith("FakeVader.Core.Domain"))
-                        .Conventions.AddFromAssemblyOf<HasManyConvention>();
+                                .AddEntityAssembly(Assembly.GetExecutingAssembly())
+                                .Where(x => x.Namespace.IsNotNullOrEmpty() 
+                                    && x.Namespace.StartsWith("FakeVader.Core.Domain"))
+                                .Conventions.AddFromAssemblyOf<HasManyConvention>();
             return Fluently.Configure()
-                .Database(databaseConfig)
-                .Mappings(
-                configuration => configuration.AutoMappings.Add(model)
-                ).BuildConfiguration();
+                            .Database(databaseConfig)
+                            .Mappings(
+                                configuration => configuration.AutoMappings.Add(model)
+                            ).BuildConfiguration();
         }
     }
 }

@@ -6,7 +6,7 @@ using FakeVader.Core.Services;
 using FakeVader.Core.ViewModels;
 using NUnit.Framework;
 
-namespace FakeVader.Tests.InfrastructureServices.ViewModelMappingSpecs {
+namespace FakeVader.Tests.Services.ViewModelMapperSpecs {
     [TestFixture]
     public class WhenAskedToMapACollectionOfDomainObjectsToViewModels : ConcernsFor<ViewModelMapper> {
         [Test]

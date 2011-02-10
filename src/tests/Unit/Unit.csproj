@@ -84,9 +84,9 @@
   <ItemGroup>
     <Compile Include="ConcernsFor.cs" />
     <Compile Include="Controllers\HomeControllerSpecs\WhenAskedToDisplayTheHomePage.cs" />
-    <Compile Include="InfrastructureServices\ViewModelMappingSpecs\WhenAskedToMapACollectionOfDomainObjectsToViewModels.cs" />
-    <Compile Include="InfrastructureServices\ViewModelMappingSpecs\WhenAskedToMapANullCollectionOfDomainObjectsToViewModels.cs" />
-    <Compile Include="InfrastructureServices\ViewModelMappingSpecs\WhenAskedToMapDomainObjectsToViewModels.cs" />
+    <Compile Include="Services\ViewModelMapperSpecs\WhenAskedToMapACollectionOfDomainObjectsToViewModels.cs" />
+    <Compile Include="Services\ViewModelMapperSpecs\WhenAskedToMapANullCollectionOfDomainObjectsToViewModels.cs" />
+    <Compile Include="Services\ViewModelMapperSpecs\WhenAskedToMapDomainObjectsToViewModels.cs" />
     <Compile Include="Infrastructure\AutoMapperSpecs\WhenAutoMapperIsInitialized.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WhenAutoMappingCustomerToCustomerViewModel.cs" />
