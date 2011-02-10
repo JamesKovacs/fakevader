@@ -1,7 +1,7 @@
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace FakeVader.Core.Infrastructure.Web {
+namespace FakeVader.Core.Infrastructure.Routing {
     public class RouteStartupTask : IStartupTask {
         public void Execute() {
             var routes = RouteTable.Routes;

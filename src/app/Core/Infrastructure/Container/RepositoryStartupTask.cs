@@ -8,7 +8,7 @@ using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using NHibernate.Cfg;
 
-namespace FakeVader.Core.Infrastructure.NHibernateSupport {
+namespace FakeVader.Core.Infrastructure.Container {
     public class RepositoryStartupTask : IContainerStartupTask {
         public void Execute(IWindsorContainer container) {
             var cfg = new NHibernateMappingGenerator(

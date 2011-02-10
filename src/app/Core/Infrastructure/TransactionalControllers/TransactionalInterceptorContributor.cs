@@ -4,7 +4,7 @@ using Castle.MicroKernel;
 using Castle.MicroKernel.ModelBuilder;
 using FakeVader.Core.Extensions;
 
-namespace FakeVader.Core.Infrastructure.NHibernateSupport {
+namespace FakeVader.Core.Infrastructure.TransactionalControllers {
     public class TransactionalInterceptorContributor : IContributeComponentModelConstruction {
         public void ProcessModel(IKernel kernel, ComponentModel model) {
             if(model.Service.Implements<IController>()) {

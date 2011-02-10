@@ -103,25 +103,25 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="Infrastructure\AutoMapping\DateFormatter.cs" />
-    <Compile Include="Infrastructure\ContainerRegistration.cs" />
+    <Compile Include="Infrastructure\Container\ContainerStartupTask.cs" />
     <Compile Include="Infrastructure\IFacilityStartupTask.cs" />
-    <Compile Include="Infrastructure\NHibernateSupport\RepositoryStartupTask.cs" />
-    <Compile Include="Infrastructure\ServicesStartupTask.cs" />
-    <Compile Include="Infrastructure\Web\WindsorControllerFactory.cs" />
+    <Compile Include="Infrastructure\Container\RepositoryStartupTask.cs" />
+    <Compile Include="Infrastructure\Container\ServicesStartupTask.cs" />
+    <Compile Include="Infrastructure\Container\WindsorControllerFactory.cs" />
     <Compile Include="Services\IViewModelMapper.cs" />
     <Compile Include="Services\ViewModelMapper.cs" />
     <Compile Include="Infrastructure\AutoMapping\AutoMapperStartupTask.cs" />
     <Compile Include="Infrastructure\IContainerStartupTask.cs" />
     <Compile Include="Infrastructure\IStartupTask.cs" />
-    <Compile Include="Infrastructure\NHProfiler\NHProfilerStartupTask.cs" />
-    <Compile Include="Infrastructure\NHibernateSupport\TransactionalFacility.cs" />
-    <Compile Include="Infrastructure\NHibernateSupport\TransactionalInterceptor.cs" />
-    <Compile Include="Infrastructure\NHibernateSupport\TransactionalInterceptorContributor.cs" />
-    <Compile Include="Infrastructure\NHibernateSupport\TransactionalFacilityStartupTask.cs" />
+    <Compile Include="Infrastructure\NHProfSupport\NHProfilerStartupTask.cs" />
+    <Compile Include="Infrastructure\TransactionalControllers\TransactionalFacility.cs" />
+    <Compile Include="Infrastructure\TransactionalControllers\TransactionalInterceptor.cs" />
+    <Compile Include="Infrastructure\TransactionalControllers\TransactionalInterceptorContributor.cs" />
+    <Compile Include="Infrastructure\TransactionalControllers\TransactionalFacilityStartupTask.cs" />
     <Compile Include="Controllers\SeedDummyDataController.cs" />
-    <Compile Include="Infrastructure\Web\ControllerFactoryStartupTask.cs" />
-    <Compile Include="Infrastructure\Web\ControllerStartupTask.cs" />
-    <Compile Include="Infrastructure\Web\RouteStartupTask.cs" />
+    <Compile Include="Infrastructure\Container\ControllerFactoryStartupTask.cs" />
+    <Compile Include="Infrastructure\Container\ControllerStartupTask.cs" />
+    <Compile Include="Infrastructure\Routing\RouteStartupTask.cs" />
     <Compile Include="Infrastructure\ApplicationBootstrapper.cs" />
     <Compile Include="Mapping\HasManyConvention.cs" />
     <Compile Include="Mapping\NHibernateMappingGenerator.cs" />
@@ -152,6 +152,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
