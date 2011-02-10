@@ -9,7 +9,7 @@ using NHibernate;
 using NHibernate.Cfg;
 
 namespace FakeVader.Core.Infrastructure.NHibernateSupport {
-    public class RepositoryRegistration : IContainerStartupTask {
+    public class RepositoryStartupTask : IContainerStartupTask {
         public void Execute(IWindsorContainer container) {
             var cfg = new NHibernateMappingGenerator(
                 MsSqlConfiguration.MsSql2005

@@ -24,7 +24,7 @@ namespace FakeVader.Tests.InfrastructureServices.ViewModelMappingSpecs {
         }
 
         protected override void Context() {
-            new AutoMapperRegistration().Execute();
+            new AutoMapperStartupTask().Execute();
             posts = new [] { 
                 new Post("Title1", "Text1"),
                 new Post("Title2", "Text2")

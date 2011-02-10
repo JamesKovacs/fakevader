@@ -2,7 +2,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace FakeVader.Core.Infrastructure.Web {
-    public class RouteRegistration : IStartupTask {
+    public class RouteStartupTask : IStartupTask {
         public void Execute() {
             var routes = RouteTable.Routes;
             routes.Clear();

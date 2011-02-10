@@ -1,14 +1,15 @@
 using System.Reflection;
+using System.Web.Mvc;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 
-namespace FakeVader.Core.Infrastructure {
-    public class ServiceRegistration : IContainerStartupTask {
+namespace FakeVader.Core.Infrastructure.Web {
+    public class ControllerStartupTask : IContainerStartupTask {
         public void Execute(IWindsorContainer container) {
             container.Register(
                 AllTypes.FromAssembly(Assembly.GetExecutingAssembly())
-                        .Where(x => x.Namespace.StartsWith("FakeVader.Core.Services"))
-                        .WithService.FirstInterface()
+                        .BasedOn<IController>()
+                        .Configure(registration => registration.LifeStyle.Transient)
                 );
         }
     }

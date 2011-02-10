@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace FakeVader.Tests.Infrastructure.AutoMapperSpecs {
     [TestFixture]
-    public class WhenAutoMapperIsInitialized : ConcernsFor<AutoMapperRegistration> {
+    public class WhenAutoMapperIsInitialized : ConcernsFor<AutoMapperStartupTask> {
         [Test]
         public void ShouldHaveAValidConfiguration() {
             Mapper.AssertConfigurationIsValid();
@@ -13,8 +13,8 @@ namespace FakeVader.Tests.Infrastructure.AutoMapperSpecs {
         protected override void Context() {
         }
 
-        protected override AutoMapperRegistration CreateSUT() {
-            return new AutoMapperRegistration();
+        protected override AutoMapperStartupTask CreateSUT() {
+            return new AutoMapperStartupTask();
         }
 
         protected override void Because() {

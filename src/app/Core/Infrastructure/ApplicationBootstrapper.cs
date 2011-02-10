@@ -7,7 +7,7 @@ namespace FakeVader.Core.Infrastructure {
     public class ApplicationBootstrapper {
         private WindsorContainer container;
 
-        public void Configure() {
+        public WindsorContainer Configure() {
             container = new WindsorContainer();
             RegisterFacilityStartupTasks();
             ExecuteFacilityStartupTasks();
@@ -15,6 +15,7 @@ namespace FakeVader.Core.Infrastructure {
             ExecuteContainerStartupTasks();
             RegisterStartupTasks();
             ExecuteStartupTasks();
+            return container;
         }
 
         private void RegisterFacilityStartupTasks() {
