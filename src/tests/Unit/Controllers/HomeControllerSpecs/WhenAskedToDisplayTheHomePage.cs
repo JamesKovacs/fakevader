@@ -36,7 +36,8 @@ namespace FakeVader.Tests.Controllers.HomeControllerSpecs {
         [Test]
         public void ShouldReturnTheCorrectPostViewModels() {
             view.AssertViewRendered()
-                .WithViewData<HomeViewModel>().Posts.ShouldBe(postViewModels);
+                .WithViewData<HomeViewModel>()
+                .Posts.ShouldBe(postViewModels);
         }
 
         protected override void Context() {
