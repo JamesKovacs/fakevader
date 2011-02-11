@@ -14,7 +14,7 @@ properties {
 task default -depends Test
 
 task Test -depends Compile {
-  exec { ..\thirdparty\tools\nunit\nunit-console.exe $testAssembly /xml=$testResults }
+  exec { ..\packages\NUnit.2.5.9.10348\Tools\nunit-console.exe $testAssembly /xml=$testResults }
 }
 
 task Compile -depends Init {
