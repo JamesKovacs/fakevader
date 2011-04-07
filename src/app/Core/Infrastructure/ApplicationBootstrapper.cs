@@ -2,6 +2,7 @@ using System.Reflection;
 using Castle.Core;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
+using Castle.Windsor.Installer;
 
 namespace FakeVader.Core.Infrastructure {
     public class ApplicationBootstrapper {
@@ -9,6 +10,7 @@ namespace FakeVader.Core.Infrastructure {
 
         public WindsorContainer Configure() {
             container = new WindsorContainer();
+//            container.Install(FromAssembly.This());
             RegisterFacilityStartupTasks();
             ExecuteFacilityStartupTasks();
             RegisterContainerStartupTasks();

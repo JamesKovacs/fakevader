@@ -57,9 +57,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\app\Web\Bin\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL" />
+    <Reference Include="Castle.Windsor, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL" />
     <Reference Include="MvcContrib.TestHelper, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\packages\MvcContrib.Mvc3.TestHelper-ci.3.0.57.0\lib\MvcContrib.TestHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\..\..\packages\NHibernate.3.0.0.2001\lib\NHibernate.ByteCode.Castle.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework, Version=2.5.9.10348, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -84,6 +89,7 @@
   <ItemGroup>
     <Compile Include="ConcernsFor.cs" />
     <Compile Include="Controllers\HomeControllerSpecs\WhenAskedToDisplayTheHomePage.cs" />
+    <Compile Include="Infrastructure\ApplicationBootstrapperSpecs\WhenWindsorContainerIsInitialized.cs" />
     <Compile Include="Services\ViewModelMapperSpecs\WhenAskedToMapACollectionOfDomainObjectsToViewModels.cs" />
     <Compile Include="Services\ViewModelMapperSpecs\WhenAskedToMapANullCollectionOfDomainObjectsToViewModels.cs" />
     <Compile Include="Services\ViewModelMapperSpecs\WhenAskedToMapDomainObjectsToViewModels.cs" />
@@ -116,6 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
