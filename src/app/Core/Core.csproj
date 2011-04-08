@@ -107,6 +107,7 @@
     <Compile Include="Infrastructure\Container\StartupTaskInstaller.cs" />
     <Compile Include="Infrastructure\DataLayer\RepositoryInstaller.cs" />
     <Compile Include="Infrastructure\Services\ServicesInstaller.cs" />
+    <Compile Include="Infrastructure\Web\GlobalFilterInstaller.cs" />
     <Compile Include="Infrastructure\Web\WindsorControllerFactory.cs" />
     <Compile Include="Services\IViewModelMapper.cs" />
     <Compile Include="Services\ViewModelMapper.cs" />

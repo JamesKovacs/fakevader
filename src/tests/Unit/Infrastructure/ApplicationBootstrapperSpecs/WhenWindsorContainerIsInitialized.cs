@@ -36,12 +36,6 @@ namespace FakeVader.Tests.Infrastructure.ApplicationBootstrapperSpecs {
         }
 
         [Test]
-        public void ShouldHaveXRegistrationsInTheContainer() {
-            var count = container.Kernel.GraphNodes.Count();
-            Assert.That(count, Is.EqualTo(12));
-        }
-
-        [Test]
         public void ShouldBeAbleToResolveServicesByDefaultInterface() {
             var viewModelMapper = container.Resolve<IViewModelMapper>();
             Assert.That(viewModelMapper, Is.TypeOf<ViewModelMapper>());
