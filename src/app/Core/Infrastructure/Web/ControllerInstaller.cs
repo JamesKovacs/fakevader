@@ -1,13 +1,13 @@
-using System.Reflection;
 using System.Web.Mvc;
 using Castle.MicroKernel.Registration;
+using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 
-namespace FakeVader.Core.Infrastructure.Container {
-    public class ControllerStartupTask : IContainerStartupTask {
-        public void Execute(IWindsorContainer container) {
+namespace FakeVader.Core.Infrastructure.Web {
+    public class ControllerInstaller : IWindsorInstaller {
+        public void Install(IWindsorContainer container, IConfigurationStore store) {
             container.Register(
-                AllTypes.FromAssembly(Assembly.GetExecutingAssembly())
+                AllTypes.FromThisAssembly()
                         .BasedOn<IController>()
                         .Configure(registration => registration.LifeStyle.Transient)
                 );

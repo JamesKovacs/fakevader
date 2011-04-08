@@ -1,7 +1,7 @@
 using System;
 using AutoMapper;
 
-namespace FakeVader.Core.Infrastructure.AutoMapping {
+namespace FakeVader.Core.Infrastructure.Services {
     public class DateFormatter : IValueFormatter {
         public string FormatValue(ResolutionContext context) {
             var sourceType = context.SourceType;

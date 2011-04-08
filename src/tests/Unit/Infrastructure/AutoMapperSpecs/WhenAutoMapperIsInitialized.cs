@@ -1,5 +1,5 @@
 using AutoMapper;
-using FakeVader.Core.Infrastructure.AutoMapping;
+using FakeVader.Core.Infrastructure.Services;
 using NUnit.Framework;
 
 namespace FakeVader.Tests.Infrastructure.AutoMapperSpecs {
@@ -18,7 +18,7 @@ namespace FakeVader.Tests.Infrastructure.AutoMapperSpecs {
         }
 
         protected override void Because() {
-            Sut.Execute();
+            Sut.Start();
         }
     }
 }

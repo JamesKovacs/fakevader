@@ -20,10 +20,10 @@ namespace FakeVader.Core.Mapping {
                                     && x.Namespace.StartsWith("FakeVader.Core.Domain"))
                                 .Conventions.AddFromAssemblyOf<HasManyConvention>();
             return Fluently.Configure()
-                            .Database(databaseConfig)
-                            .Mappings(
-                                configuration => configuration.AutoMappings.Add(model)
-                            ).BuildConfiguration();
+                           .Database(databaseConfig)
+                           .Mappings(
+                               configuration => configuration.AutoMappings.Add(model)
+                           ).BuildConfiguration();
         }
     }
 }

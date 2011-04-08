@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using FakeVader.Core.Domain;
-using FakeVader.Core.Infrastructure.AutoMapping;
+using FakeVader.Core.Infrastructure.Services;
 using FakeVader.Core.Services;
 using FakeVader.Core.ViewModels;
 using NUnit.Framework;
@@ -24,7 +24,7 @@ namespace FakeVader.Tests.Services.ViewModelMapperSpecs {
         }
 
         protected override void Context() {
-            new AutoMapperStartupTask().Execute();
+            new AutoMapperStartupTask().Start();
             posts = new [] { 
                 new Post("Title1", "Text1"),
                 new Post("Title2", "Text2")

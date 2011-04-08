@@ -1,9 +1,10 @@
 using System.Web.Mvc;
 using System.Web.Routing;
+using Castle.Core;
 
-namespace FakeVader.Core.Infrastructure.Routing {
-    public class RouteStartupTask : IStartupTask {
-        public void Execute() {
+namespace FakeVader.Core.Infrastructure.Web {
+    public class RouteStartupTask : IStartable {
+        public void Start() {
             var routes = RouteTable.Routes;
             routes.Clear();
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
@@ -14,6 +15,9 @@ namespace FakeVader.Core.Infrastructure.Routing {
                 "{controller}/{action}/{id}", // URL with parameters
                 new {controller = "Home", action = "Index", id = ""} // Parameter defaults
                 );
+        }
+
+        public void Stop() {
         }
     }
 }

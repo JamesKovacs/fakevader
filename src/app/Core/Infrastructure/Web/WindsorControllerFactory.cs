@@ -4,7 +4,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Castle.Windsor;
 
-namespace FakeVader.Core.Infrastructure.Container {
+namespace FakeVader.Core.Infrastructure.Web {
     /// <summary>
     /// Controller Factory class for instantiating controllers using the Windsor IoC container.
     /// </summary>

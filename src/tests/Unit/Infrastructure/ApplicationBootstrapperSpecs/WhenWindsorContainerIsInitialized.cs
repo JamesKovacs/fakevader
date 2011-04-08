@@ -5,6 +5,7 @@ using FakeVader.Core.Controllers;
 using FakeVader.Core.Domain;
 using FakeVader.Core.Infrastructure;
 using FakeVader.Core.Repositories;
+using FakeVader.Core.Services;
 using NUnit.Framework;
 
 namespace FakeVader.Tests.Infrastructure.ApplicationBootstrapperSpecs {
@@ -37,7 +38,13 @@ namespace FakeVader.Tests.Infrastructure.ApplicationBootstrapperSpecs {
         [Test]
         public void ShouldHaveXRegistrationsInTheContainer() {
             var count = container.Kernel.GraphNodes.Count();
-            Assert.That(count, Is.EqualTo(18));
+            Assert.That(count, Is.EqualTo(12));
+        }
+
+        [Test]
+        public void ShouldBeAbleToResolveServicesByDefaultInterface() {
+            var viewModelMapper = container.Resolve<IViewModelMapper>();
+            Assert.That(viewModelMapper, Is.TypeOf<ViewModelMapper>());
         }
 
         protected override void Context() {
