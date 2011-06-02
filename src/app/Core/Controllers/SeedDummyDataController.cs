@@ -6,6 +6,7 @@ using FakeVader.Core.Repositories;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
 using System.Linq;
+using FakeVader.Core.Extensions;
 
 namespace FakeVader.Core.Controllers {
     public class SeedDummyDataController : Controller {
@@ -19,7 +20,7 @@ namespace FakeVader.Core.Controllers {
 
             using(var scope = new TransactionScope()) {
                 foreach(var quote in quotes) {
-                    var title = string.Join(" ", quote.Split(' ').Take(5).ToArray());
+                    var title = quote.Split(' ').Take(5).Join(" ");
                     var post = new Post(title, quote, DateTime.Now.AddMilliseconds(-Math.Abs(quote.GetHashCode())));
                     repository.Save(post);
                 }

@@ -5,8 +5,8 @@
 
 @foreach(var post in Model.Posts) {
     <div class="post">
-        <h2 class="title">@Html.Encode(post.Title)</h2>
-        <p class="date">@Html.Encode(post.PublishDate)</p>
+        <h2 class="title">@post.Title</h2>
+        <p class="date">@post.PublishDate</p>
 		    <div class="entry">
 			    <div class="entry-btm">
 			        @post.Text
