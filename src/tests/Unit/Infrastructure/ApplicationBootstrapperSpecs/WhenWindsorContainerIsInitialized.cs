@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Web.Mvc;
 using Castle.Windsor;
@@ -10,6 +11,19 @@ using NUnit.Framework;
 
 namespace FakeVader.Tests.Infrastructure.ApplicationBootstrapperSpecs {
     public class WhenWindsorContainerIsInitialized : ConcernsFor<ApplicationBootstrapper>{
+        [Test]
+        public void ItShouldBeAbleToResolveAllConcreteDependencies() {
+            foreach(var handler in container.Kernel.GetAssignableHandlers(typeof(object))) {
+                var impl = handler.ComponentModel.Implementation;
+                if(impl.IsAbstract || impl.IsGenericTypeDefinition) {
+                    continue;
+                }
+                var dependency = container.Resolve(handler.Service);
+                Assert.That(dependency, Is.Not.Null);
+            }
+        }
+
+
         [Test]
         public void ItShouldContainWithMvcControllers() {
             Assert.That(container.ResolveAll<Controller>().Count(), Is.GreaterThan(0));
